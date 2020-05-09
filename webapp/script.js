@@ -63,26 +63,27 @@ const trafficData = [
 ];
 
 
+// change the classes in nav-bar when you click
 
-// ul.addEventListener('click', (event) => {
-//     const pathAll = document.querySelectorAll('.st0');
-//     const allLi = ul.getElementsByTagName('li');
-//     console.log(allLi);
-//     const path = event.target.tagName == path;
-//     if(event.target.tagName == 'svg' || event.target.tagName == 'path') {
-        
-//         console.log(path);
-//         for(let i = 0; i < pathAll.length; i++) {
-//             pathAll[i].classList.remove('svg-white');
-//             allLi[i].classList.remove('list-border');
-//         }
-        
-        
+ul.addEventListener('click', (event) => {
+    const pathAll = document.querySelectorAll('.st0');
+    const allLi = ul.getElementsByTagName('li');    
+    if(event.target.tagName == 'svg' || event.target.tagName == 'path') {
+        for(let i = 0; i < pathAll.length; i++) {
+            pathAll[i].classList.remove('svg-white');
+            allLi[i].classList.remove('list-border');
+        }
 
-//     }
+        if(event.target.parentNode.nodeName == 'LI') {
+            const parentLi = event.target.parentNode; 
+            const eventPath = parentLi.querySelector('.st0');
+            parentLi.classList.add('list-border');
+            eventPath.classList.add('svg-white');
+        }
+    }
     
     
-// });
+});
 
 // dropdown menu
 bell.addEventListener('click', function()  {
