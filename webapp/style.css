@@ -298,13 +298,15 @@ svg:hover > #_x32__16_ .st0 {
     display: grid;
     grid-area: main-content;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: 90px;
     grid-template-areas: 
     "top-part"
     "traffic-part"
     "second-chart"
-    "social-stats";
-    height: 100vh;
+    "social-stats"
+    "member-part"
+    "bottom-part";
+    
 }
 
 
@@ -315,6 +317,7 @@ svg:hover > #_x32__16_ .st0 {
     justify-content: space-between;
     flex-wrap: wrap;
     grid-area: top-part;
+
 }
 
 .top-part h2 {
@@ -327,6 +330,7 @@ svg:hover > #_x32__16_ .st0 {
     background: linear-gradient(to bottom, #2D545E 0%, #366470 24%, #59A6BA 100%);
     border-bottom: 1px solid #59A6BA;
     border-left: 1px solid #2D545E;
+    height: 49px;
 }
 
 .top-part input {
@@ -426,6 +430,7 @@ svg:hover > #_x32__16_ .st0 {
 
 .second-chart {
     grid-area: second-chart;
+    
 }
 
 
@@ -439,7 +444,8 @@ svg:hover > #_x32__16_ .st0 {
 
 #bar-chart, #doughnut-chart {
     width: 80% !important;
-    margin: 20px auto;
+    margin: 1em auto;
+    
 }
 
 /* Social Stats */
@@ -521,6 +527,7 @@ svg:hover > #_x32__16_ .st0 {
 
 .members {
     border-top: 1.5px solid #12343B;
+    grid-area: member-part;
 }
 
 .members h3 {
@@ -610,6 +617,7 @@ svg:hover > #_x32__16_ .st0 {
 
 .bottom-part {
     border-top: 1.5px solid #12343B;
+    grid-area: bottom-part;
 }
 
 .bottom-part h3 {
@@ -655,8 +663,8 @@ svg:hover > #_x32__16_ .st0 {
 }
 
 #sendbtn {
-    width: 200px;
-    margin: 1em 0 1em 30%;
+    width: 300px;
+    margin: 1em 0 1em 20%;
 }
 
 #sendbtn, .save, .cancel{
@@ -825,10 +833,6 @@ svg:hover > #_x32__16_ .st0 {
         margin-left: 94%;
     }
 
-    .dropdown {
-        
-    }
-
     .traffic-header {
         width: 90%;
         margin: 0 auto;
@@ -838,7 +842,8 @@ svg:hover > #_x32__16_ .st0 {
     /* nav part */
     .nav-bar {
         background: linear-gradient(to bottom, #12343B 0%, #1A4A54 15%, #2D545E 50%);
-     
+        grid-column: col-start -1 / span 2;
+        grid-row: 2 / 7;   
     }
 
     .nav-bar li {
@@ -873,6 +878,7 @@ svg:hover > #_x32__16_ .st0 {
     
     /* second part */
 
+
     .second-chart h3, .members h3 {
         width: 80%;
     }
@@ -880,7 +886,6 @@ svg:hover > #_x32__16_ .st0 {
     .second-chart, .members, .bottom-part {
         display: flex;
         justify-content: space-around;
-        width: 100%;
         border-top: 1.5px solid #12343B;
         border-bottom: 1.5px solid #12343B;
     }
@@ -891,6 +896,7 @@ svg:hover > #_x32__16_ .st0 {
 
     .daily-traffic, .mobile-users{
         width: 45%;
+        height: 400px;
     }
 
     .memberlist, .activitylist {
@@ -922,6 +928,10 @@ svg:hover > #_x32__16_ .st0 {
         height: 40px;
         width: 40px;
         margin: 20px;
+    }
+
+    #bar-chart, #doughnut-chart {
+        margin-top: 2em;
     }
 
 

@@ -8,6 +8,11 @@ const dropUl = document.querySelector('.dropdown ul');
 const trafficUl = document.querySelector('.traffic-part ul');
 const sendBtn = document.getElementById('sendbtn');
 const toggleBtn = document.querySelectorAll('.toggle-btn');
+const bottomBtns = document.querySelector('.bottombtns');
+const setEmail = document.querySelector('.st1 .toggle-btn');
+const setProfile = document.querySelector('.st2 .toggle-btn');
+const time = document.getElementById('timezone');
+
 
 
 //line chart arrays 
@@ -59,17 +64,25 @@ const trafficData = [
 
 
 
-ul.addEventListener('click', (event) => {
-    const pathAll = document.querySelectorAll('.st0');
-    const path = event.target.querySelector('.st0');
-    if(event.target.tagName == 'svg' || event.target.tagName == 'path') {
-        for(let i = 0; i < pathAll.length; i++) {
-            pathAll[i].classList.remove('svg-white');
-        }
-    }
+// ul.addEventListener('click', (event) => {
+//     const pathAll = document.querySelectorAll('.st0');
+//     const allLi = ul.getElementsByTagName('li');
+//     console.log(allLi);
+//     const path = event.target.tagName == path;
+//     if(event.target.tagName == 'svg' || event.target.tagName == 'path') {
+        
+//         console.log(path);
+//         for(let i = 0; i < pathAll.length; i++) {
+//             pathAll[i].classList.remove('svg-white');
+//             allLi[i].classList.remove('list-border');
+//         }
+        
+        
+
+//     }
     
     
-});
+// });
 
 // dropdown menu
 bell.addEventListener('click', function()  {
@@ -274,8 +287,36 @@ onOff(0);
 onOff(1);
 
 
+bottomBtns.addEventListener('click', (event) =>  {
+    
+    if(event.target.tagName == 'BUTTON') {
+        if(event.target.classList == 'save') {
+            var selectValue = time.value;
+            localStorage.setItem('email', setEmail.className);
+            localStorage.setItem('profile', setProfile.className);
+            localStorage.setItem('time', selectValue);
+        }
+        if(event.target.className == 'cancel') {
+            localStorage.clear();
+        }
+    }
+})
 
-// timezone 
 
+function settings() { 
+    const dispEmail = localStorage.getItem('email');
+    const dispProfile = localStorage.getItem('profile');
+    const dispTime = localStorage.getItem('time');
+    if(dispEmail != null){
+        setEmail.classList = dispEmail;
+    }
+    if(dispProfile != null){
+        setProfile.classList = dispProfile;
+    }
+    if(dispTime != null){
+        time.value = dispTime;
+    }
+}
 
+settings();
 
