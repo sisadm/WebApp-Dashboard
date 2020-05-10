@@ -349,7 +349,6 @@ svg:hover > #_x32__16_ .st0 {
     text-align: left;
     color: rgb(101, 98, 98);
     width: 100%;
-    max-width: 800px;
 }
 
 .alertspan  {
@@ -423,17 +422,13 @@ svg:hover > #_x32__16_ .st0 {
 #lineChart {
     width: 90%;
     margin: 1em auto;
-    max-width: 1280px;
 }
 
 /* second chart */
 
 .second-chart {
     grid-area: second-chart;
-    
 }
-
-
 
 .second-chart h3 {
     color: #6f6c6c;
@@ -465,7 +460,6 @@ svg:hover > #_x32__16_ .st0 {
     border-radius: 10px;
     margin: 1em;
     margin-bottom: 3em;
-    max-width: 320px;
 }
 
 .social-stats h3 {
@@ -493,15 +487,11 @@ svg:hover > #_x32__16_ .st0 {
     margin: 22px 30px 2px 0;
 }
 
-
-
-
 .social-wrap::after, .person-div:after {
     content: '';
     clear: both;
     display: table;
 }
-
 
 .icon-holder {
     width: 50px;
@@ -540,7 +530,6 @@ svg:hover > #_x32__16_ .st0 {
 
 .memberlist, .activitylist {
     margin: 0 auto;
-    
 }
 
 .members ul {
@@ -639,7 +628,6 @@ svg:hover > #_x32__16_ .st0 {
     height: 35px;
 } 
 
-
 #searchbox, #textarea,
 #timezone {
     font-size: 18px;
@@ -652,7 +640,6 @@ svg:hover > #_x32__16_ .st0 {
 
 #textarea, #sendbtn {
     border-radius: 10px;
-    
 }
 
 #searchbox::placeholder, #textarea::placeholder,
@@ -664,7 +651,8 @@ svg:hover > #_x32__16_ .st0 {
 
 #sendbtn {
     width: 300px;
-    margin: 1em 0 1em 20%;
+    margin: 1em;
+    margin-left: 25%;
 }
 
 #sendbtn, .save, .cancel{
@@ -783,11 +771,9 @@ svg:hover > #_x32__16_ .st0 {
     border-radius: 10px;
 }
 
-
-
 @media (max-width: 767px) {
 
-
+    /* line between the parts */
     .daily-traffic {
         border-top: 1.5px solid #12343B;
         padding: 10px 0;
@@ -806,8 +792,6 @@ svg:hover > #_x32__16_ .st0 {
     .bottom-part .halfline {
         border-bottom: 1.5px solid #12343B;
     }
-
-
 }
 
 @media (min-width: 768px) {
@@ -837,6 +821,12 @@ svg:hover > #_x32__16_ .st0 {
         width: 90%;
         margin: 0 auto;
         max-width: 1260px;
+    }
+
+    /* Top part */
+
+    .top-part h3 {
+        max-width: 800px;
     }
 
     /* nav part */
@@ -903,6 +893,16 @@ svg:hover > #_x32__16_ .st0 {
         width: 48%;
     }
 
+    #lineChart {
+    max-width: 1280px;
+    }
+
+    #bar-chart, #doughnut-chart {
+        margin-top: 2em;
+    }
+
+    /* Social Part */
+
     .social-stats {
         width: 100%;
         justify-content: space-around;
@@ -911,6 +911,7 @@ svg:hover > #_x32__16_ .st0 {
     .social-wrap {
         height: 120px;
         width: 250px;
+        max-width: 320px;
     }
 
     .social-info {
@@ -930,11 +931,8 @@ svg:hover > #_x32__16_ .st0 {
         margin: 20px;
     }
 
-    #bar-chart, #doughnut-chart {
-        margin-top: 2em;
-    }
-
-
+    /* bottom part  */
+    /* message */
     .memberlist, .activitylist, .message-part, .settings {
         max-width: 500px;
     }
@@ -942,12 +940,15 @@ svg:hover > #_x32__16_ .st0 {
     .message-part, .settings {
         width: 45%;
     }
-    
-    
+    /* settings */
+    #sendbtn {
+        margin-left: 5%;
+    }
 }
 
 @media (min-width: 830px) {
 
+    /* social stats */
     .social-wrap {
         width: 250px;
     }
@@ -960,6 +961,11 @@ svg:hover > #_x32__16_ .st0 {
         font-size: 18px;
     }
 
+    /* settings btn */
+
+    #sendbtn {
+        margin-left: 10%;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -969,8 +975,14 @@ svg:hover > #_x32__16_ .st0 {
         width: 88%;
     }
 
+    /* social stats */
     .social-info {
         margin: 1.8em 40px 0 0;
+    }
+
+    /* settings btn */
+    #sendbtn {
+        margin-left: 20%;
     }
 }
 

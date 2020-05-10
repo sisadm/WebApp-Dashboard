@@ -1,7 +1,6 @@
-
 const ul = document.querySelector('#navul');
 const alertBox = document.querySelector('.alert');
-const alertX = document.querySelector('.alert span');
+const alertX = document.querySelector('.alertx');
 const ctx = document.getElementById('lineChart');
 const bell = document.getElementById('bell');
 const dropUl = document.querySelector('.dropdown ul');
@@ -63,7 +62,7 @@ const trafficData = [
 ];
 
 
-// change the classes in nav-bar when you click
+// change the classes in nav-bar when you click the svg
 
 ul.addEventListener('click', (event) => {
     const pathAll = document.querySelectorAll('.st0');
@@ -259,13 +258,17 @@ autocomplete({
 // message check
 
 sendBtn.addEventListener('click', function() {
-    const text = document.getElementById('searchbox').value;
+    const search = document.getElementById('searchbox').value;
     const textarea = document.getElementById('textarea').value;
     const original = sendBtn.innerHTML;
-    if(text == "" || textarea == "") {
+    if(search == "" && textarea == "") {
         alert('Please Fill both area to send the message.');
+    } else if(search == "") {
+        alert('Please Fill the User area too!');
+    } else if(textarea == "") {
+        alert('Please Fill the Message area too!');
     } else {
-        sendBtn.innerHTML = `Message sent to ${text}`;
+        sendBtn.innerHTML = `Message sent to ${search}`;
         setTimeout(function() {
             sendBtn.innerHTML = original;
         }, 4000)
@@ -287,6 +290,8 @@ const onOff = function(x) {
 onOff(0);
 onOff(1);
 
+
+// save the settings to localStorage
 
 bottomBtns.addEventListener('click', (event) =>  {
     
